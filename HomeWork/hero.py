@@ -31,18 +31,28 @@ class AirHero(SuperHero):
 class EarthHero(SuperHero):
     def __init__(self, name, nickname, superpower, health_points, catchphrase, damage, ground_strength):
         super().__init__(name, nickname, superpower, health_points, catchphrase, damage)
-        self.ground_strength = ground_strength  # Специфическое свойство для земного героя
+        self.ground_strength = ground_strength
+
+class SpaceHero(SuperHero):
+    def __init__(self, name, nickname, superpower, health_points, catchphrase, damage, space_ability):
+        super().__init__(name, nickname, superpower, health_points, catchphrase, damage)
+        self.space_ability = space_ability
 
 air_hero = AirHero('Clark Kent', 'Superman', 'flight', 200, 'Up, up and away!', 70, air_speed=900)
 earth_hero = EarthHero('Bruce Wayne', 'Batman', 'super strength', 150, 'I am vengeance!', 50, ground_strength=100)
+space_hero = SpaceHero('Peter Quill', 'Star-Lord', 'space travel', 180, 'I am Groot!', 60, space_ability='space combat')
 
 air_hero.умножить_здоровье_на_2()
 earth_hero.умножить_здоровье_на_2()
+space_hero.умножить_здоровье_на_2()
+
 air_hero.true_phrase()
 earth_hero.true_phrase()
+space_hero.true_phrase()
 
 print(f"{air_hero.nickname} health points after transformation: {air_hero.health_points}, can fly: {air_hero.fly}")
 print(f"{earth_hero.nickname} health points after transformation: {earth_hero.health_points}, can fly: {earth_hero.fly}")
+print(f"{space_hero.nickname} health points after transformation: {space_hero.health_points}, can fly: {space_hero.fly}")
 
 class Villain(EarthHero):
     people = 'monster'
@@ -57,5 +67,6 @@ villain = Villain('Lex Luthor', 'Luthor', 'genius intellect', 100, 'Knowledge is
 
 print(f"{villain.nickname} initial damage: {villain.damage}")
 villain.crit(earth_hero)
+
 print(f"{villain.nickname} damage after crit: {villain.damage}")
 print(f"{earth_hero.nickname} damage after crit applied by villain: {earth_hero.damage}")
