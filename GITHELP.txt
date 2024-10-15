@@ -1,0 +1,32 @@
+1 раз
+git init - инициализирует проект(.git)
+git remote add origin ссылка на ваш репозиторий -привязывает репозиторий и ваш проект
+
+file: .gitignore
+
+2 каждый раз
+git add namefile\.- добаляет в репозиторий ваши файлы
+git commit -m 'lesson1' - чекпоинт
+git push origin master\main -отправка в ваш репозиторий
+
+полезные команды
+git status | -s -показывает этапы файлов
+git rm --cached namefile: рип файлов в репозитории
+
+git clone урл ссылка - скачивает проект из гит репозитория
+git remote remove origin - отвязывает проект от репозитория
+
+git branch: показывает ветки и на какой ветке вы
+git branch name: создает ветку
+git checkout name: переключает на ветку
+git checkout -b name: создает и переключает на ветку
+
+git merge - сливает обновления из ветки
+которую вы указави в ветку в которой вы нахдитесь
+
+команды для venv:
+python3\py\py3\python -m venv env
+pip install name
+pip freeze > namefile
+deactivate - деактивировать вертуальную среду
+source .venv/bin/activate - активировать вертуальную среду
